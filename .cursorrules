@@ -1,0 +1,211 @@
+# AI SME Project - Cursor Rules
+
+## Project Context
+This is a 3-week POC for an AI-powered documentation assistant using RAG (Retrieval Augmented Generation).
+
+## Tech Stack
+- Backend: Python 3.11+, FastAPI, LlamaIndex, ChromaDB, OpenAI
+- Frontend: TypeScript, Next.js 14, React 18, Tailwind CSS
+- Data: Apache Kafka (Confluence + GitHub for POC)
+
+## Code Style
+
+### Python (Backend)
+- Use type hints for all functions
+- Follow PEP 8 style guide
+- Max line length: 100 characters
+- Use docstrings (Google style)
+- Prefer async/await where appropriate
+- Use Pydantic for data validation
+- Log with loguru (imported as `log` from `src.utils`)
+
+Example:
+```python
+from typing import List, Optional
+from src.utils import log
+
+async def process_document(doc_id: str, content: str) -> Optional[Dict]:
+    """
+    Process a document and return metadata.
+    
+    Args:
+        doc_id: Unique document identifier
+        content: Document content text
+        
+    Returns:
+        Dictionary with processed metadata or None if failed
+    """
+    log.info(f"Processing document: {doc_id}")
+    # Implementation
+    return result
+```
+
+### TypeScript (Frontend)
+- Use functional components with hooks
+- Prefer const over let
+- Use TypeScript types (no 'any')
+- Use named exports
+- Max line length: 100 characters
+
+Example:
+```typescript
+interface ChatMessage {
+  id: string;
+  content: string;
+  role: 'user' | 'assistant';
+  timestamp: Date;
+}
+
+export const ChatMessage: React.FC<{ message: ChatMessage }> = ({ message }) => {
+  return (
+    <div className="message">
+      {message.content}
+    </div>
+  );
+};
+```
+
+## File Organization
+
+### Backend Structure
+- `src/scrapers/` - Data collection from Confluence/GitHub
+- `src/indexers/` - Document processing and chunking
+- `src/rag/` - RAG pipeline (vector store, retrieval, generation)
+- `src/api/` - FastAPI endpoints and models
+- `src/config/` - Configuration management
+- `src/utils/` - Helper functions and utilities
+
+### Frontend Structure
+- `app/` - Next.js pages (App Router)
+- `components/` - React components
+  - `components/chat/` - Chat-related components
+  - `components/ui/` - Reusable UI components
+  - `components/layout/` - Layout components
+- `lib/` - Utilities and non-component code
+  - `lib/api/` - API client
+  - `lib/store/` - State management (Zustand)
+  - `lib/utils/` - Helper functions
+
+## Import Conventions
+
+### Python
+```python
+# Standard library
+import os
+from typing import List, Dict
+
+# Third party
+from fastapi import FastAPI
+import openai
+
+# Local
+from src.config import settings
+from src.utils import log
+```
+
+### TypeScript
+```typescript
+// React
+import { useState, useEffect } from 'react';
+
+// Next.js
+import { useRouter } from 'next/navigation';
+
+// Third party
+import { useQuery } from '@tanstack/react-query';
+
+// Local
+import { apiClient } from '@/lib/api/client';
+import { Button } from '@/components/ui/button';
+```
+
+## Key Patterns
+
+### Configuration
+Always use `settings` from `src.config` for configuration values:
+```python
+from src.config import settings
+
+api_key = settings.openai_api_key
+chunk_size = settings.chunk_size
+```
+
+### Logging
+Use loguru logger imported from utils:
+```python
+from src.utils import log
+
+log.info("Processing started")
+log.error(f"Failed to process: {error}")
+```
+
+### API Endpoints
+Structure endpoints in separate router files:
+```python
+from fastapi import APIRouter
+
+router = APIRouter(prefix="/api/chat", tags=["chat"])
+
+@router.post("/message")
+async def send_message(message: str):
+    # Implementation
+    pass
+```
+
+### Error Handling
+Always handle errors gracefully:
+```python
+try:
+    result = await process()
+    return result
+except Exception as e:
+    log.error(f"Processing failed: {e}")
+    raise HTTPException(status_code=500, detail=str(e))
+```
+
+## Testing
+- Write tests for critical functionality
+- Use pytest for backend
+- Mock external API calls
+- Test edge cases
+
+## Documentation
+- Add docstrings to all public functions
+- Update README when adding features
+- Comment complex logic
+- Keep API documentation in sync
+
+## Git Workflow
+- Commit frequently with clear messages
+- Use conventional commits: `feat:`, `fix:`, `docs:`, etc.
+- Keep commits focused and atomic
+
+## Performance
+- Use async/await for I/O operations
+- Batch embeddings generation
+- Cache frequently accessed data
+- Monitor response times
+
+## Security
+- Never commit API keys
+- Use environment variables
+- Validate all user inputs
+- Sanitize file uploads
+
+## Current Phase
+Week 1: Backend Development (Days 1-7)
+Focus: Data ingestion, vector DB, RAG pipeline, API endpoints
+
+## Helpful Commands
+Backend:
+- Start: `cd backend && python main.py`
+- Test: `cd backend && pytest`
+
+Frontend:
+- Start: `cd frontend && npm run dev`
+- Build: `cd frontend && npm run build`
+
+Docker:
+- Start: `docker-compose up -d`
+- Logs: `docker-compose logs -f`
+- Stop: `docker-compose down`

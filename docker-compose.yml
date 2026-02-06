@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-sme-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - VECTOR_DB_PATH=/app/chroma_db
+      - DEBUG=true
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+      - chroma_data:/app/chroma_db
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - ai-sme-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ai-sme-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    command: npm run dev
+    depends_on:
+      - backend
+    networks:
+      - ai-sme-network
+
+  # Optional: Redis for conversation memory
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: ai-sme-redis
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #   networks:
+  #     - ai-sme-network
+
+volumes:
+  chroma_data:
+  # redis_data:
+
+networks:
+  ai-sme-network:
+    driver: bridge
