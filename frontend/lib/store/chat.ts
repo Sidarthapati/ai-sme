@@ -160,4 +160,14 @@ export const useChatStore = create<ChatState>((set, get) => ({
       }
     })
   },
+
+  loadConversations: (conversations: Conversation[]) => {
+    set((state) => {
+      const newConversations = new Map(state.conversations)
+      for (const conv of conversations) {
+        newConversations.set(conv.id, conv)
+      }
+      return { conversations: newConversations }
+    })
+  },
 }))

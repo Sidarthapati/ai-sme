@@ -43,6 +43,18 @@ packaging==23.2  # Fix langchain-core conflict
 pandas==2.2.0
 numpy==1.26.3
 
+# Database
+sqlalchemy==2.0.25
+asyncpg==0.29.0  # PostgreSQL async driver
+alembic==1.13.1  # Database migrations
+
+# Authentication
+google-auth==2.27.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+python-jose[cryptography]==3.3.0  # JWT tokens
+passlib[bcrypt]==1.7.4  # Password hashing (for future use)
+
 # Caching (optional - for conversation memory)
 redis==5.0.1
 

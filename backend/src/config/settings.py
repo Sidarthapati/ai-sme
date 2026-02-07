@@ -77,6 +77,20 @@ class Settings(BaseSettings):
         env="ALLOWED_FILE_TYPES"
     )
     
+    # Database
+    database_url: Optional[str] = Field(default=None, env="DATABASE_URL")
+    db_user: Optional[str] = Field(default=None, env="DB_USER")
+    db_password: Optional[str] = Field(default=None, env="DB_PASSWORD")
+    db_host: Optional[str] = Field(default="localhost", env="DB_HOST")
+    db_port: Optional[str] = Field(default="5432", env="DB_PORT")
+    db_name: Optional[str] = Field(default="ai_sme", env="DB_NAME")
+    
+    # Google OAuth
+    google_client_id: Optional[str] = Field(default=None, env="GOOGLE_CLIENT_ID")
+    
+    # JWT Authentication
+    jwt_secret_key: Optional[str] = Field(default=None, env="JWT_SECRET_KEY")
+    
     # Redis (optional)
     redis_url: Optional[str] = Field(default=None, env="REDIS_URL")
     redis_password: Optional[str] = Field(default=None, env="REDIS_PASSWORD")

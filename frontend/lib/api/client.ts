@@ -3,8 +3,10 @@
  */
 
 import axios from 'axios'
+import { useAuthStore } from '@/lib/store/auth'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+
 
 const apiClient = axios.create({
   baseURL: API_URL,
@@ -13,6 +15,33 @@ const apiClient = axios.create({
     'Content-Type': 'application/json',
   },
 })
+
+// Add auth token to all requests
+apiClient.interceptors.request.use(
+  (config) => {
+    const token = useAuthStore.getState().accessToken
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
+
+// Handle 401 errors (unauthorized)
+apiClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      // Clear auth and redirect to login
+      useAuthStore.getState().clearAuth()
+      // Don't redirect automatically - let components handle it
+    }
+    return Promise.reject(error)
+  }
+)
 
 // Request interceptor
 apiClient.interceptors.request.use(
@@ -51,11 +80,28 @@ export const chatApi = {
     return response.data
   },
 
+  listConversations: async () => {
+    const response = await apiClient.get('/api/chat/conversations')
+    return response.data
+  },
+
+  getConversation: async (conversationId: string) => {
+    const response = await apiClient.get(`/api/chat/conversations/${conversationId}`)
+    return response.data
+  },
+
   streamMessage: async function* (message: string, sourceType?: string, conversationId?: string) {
+    // Get auth token from store
+    const token = useAuthStore.getState().accessToken
+    if (!token) {
+      throw new Error('Not authenticated. Please sign in.')
+    }
+
     const response = await fetch(`${API_URL}/api/chat/stream`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
       },
       body: JSON.stringify({
         message,
@@ -64,6 +110,17 @@ export const chatApi = {
         stream: true,
       }),
     })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error('Stream error:', response.status, errorText)
+      if (response.status === 403 || response.status === 401) {
+        // Clear auth and force re-login
+        useAuthStore.getState().clearAuth()
+        throw new Error('Authentication failed. Please sign in again.')
+      }
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
 
     if (!response.body) {
       throw new Error('No response body')
