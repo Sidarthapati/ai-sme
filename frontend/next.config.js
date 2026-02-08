@@ -6,10 +6,6 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  // Enable experimental features if needed
-  experimental: {
-    serverActions: true,
-  },
 }
 
 module.exports = nextConfig

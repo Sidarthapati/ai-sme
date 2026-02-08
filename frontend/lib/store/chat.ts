@@ -41,6 +41,7 @@ interface ChatState {
   clearError: () => void
   deleteConversation: (id: string) => void
   loadConversation: (conversation: Conversation) => void
+  loadConversations: (conversations: Conversation[]) => void
 }
 
 const generateId = () => {
