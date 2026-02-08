@@ -5,23 +5,26 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Install dependencies  
 RUN npm ci
 
 # Copy application code
 COPY . .
 
-# Railway automatically passes environment variables to Docker builds
-# Debug: Print env vars to verify they're available (remove after debugging)
-RUN echo "🔍 NEXT_PUBLIC_API_URL: $NEXT_PUBLIC_API_URL"
-RUN echo "🔍 NEXT_PUBLIC_GOOGLE_CLIENT_ID: $NEXT_PUBLIC_GOOGLE_CLIENT_ID"
-
-# Build the application (Next.js reads process.env.NEXT_PUBLIC_* at build time)
-# Railway should automatically pass these env vars to the build process
-RUN npm run build
+# Railway passes environment variables, but they might not be available during build
+# We'll create .env.production using the build script which reads Railway's env vars
+# The script will use process.env which Railway should populate
+RUN NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL} \
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID=${NEXT_PUBLIC_GOOGLE_CLIENT_ID} \
+    NEXT_PUBLIC_APP_NAME=${NEXT_PUBLIC_APP_NAME} \
+    NEXT_PUBLIC_APP_VERSION=${NEXT_PUBLIC_APP_VERSION} \
+    NEXT_PUBLIC_ENABLE_FILE_UPLOAD=${NEXT_PUBLIC_ENABLE_FILE_UPLOAD} \
+    NEXT_PUBLIC_ENABLE_FEEDBACK=${NEXT_PUBLIC_ENABLE_FEEDBACK} \
+    NEXT_PUBLIC_ENABLE_DARK_MODE=${NEXT_PUBLIC_ENABLE_DARK_MODE} \
+    npm run build
 
 # Expose port
 EXPOSE 3000
 
-# Start production server
+# Start production server  
 CMD ["npm", "start"]
