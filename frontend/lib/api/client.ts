@@ -155,11 +155,6 @@ export const chatApi = {
     }
   },
 
-  getConversation: async (conversationId: string) => {
-    const response = await apiClient.get(`/api/chat/conversations/${conversationId}`)
-    return response.data
-  },
-
   deleteConversation: async (conversationId: string) => {
     const response = await apiClient.delete(`/api/chat/conversations/${conversationId}`)
     return response.data
