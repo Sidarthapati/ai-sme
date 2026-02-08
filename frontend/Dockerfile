@@ -1,5 +1,4 @@
-# Frontend Dockerfile
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
@@ -12,14 +11,23 @@ RUN npm ci
 # Copy application code
 COPY . .
 
-# Build the application (for production)
-# RUN npm run build
+# Build the application
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine AS runner
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+# Copy built application
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
 # Expose port
 EXPOSE 3000
 
-# Development mode
-CMD ["npm", "run", "dev"]
-
-# Production mode (uncomment when deploying)
-# CMD ["npm", "start"]
+# Run the application
+CMD ["node", "server.js"]

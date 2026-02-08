@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone', // Required for Docker standalone build
   images: {
     domains: ['localhost'],
   },
