@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Preview+Release+Notes",
+  "title": "The Next Generation of the Consumer Rebalance Protocol (KIP-848) - Preview Release Notes - Apache Kafka - Apache Software Foundation",
+  "content": "Apache Kafka version 3.8.0 is shipped with an preview of the new generation of the consumer rebalance protocol (KIP-848). The next generation of the consumer rebalance protocol has three major changes: (1) the new consumer rebalance protocol; (2) a brand new group coordinator; and (3) a brand new threading model for the consumer. It is not recommended for production environments. Instead, we advice users to test it in clusters created for testing the feature.\nLimitations:\nThe server side regular expression is not implemented yet. However, the regular client side regex subscription works.\nThe client side assignors are not supported yet.\nHow to test it?\nThe simplest way is to create a new KRaft cluster following the instruction\nhere\nbut with the additional configurations added to\nconfig/kraft/server.properties\n:\ngroup.coordinator.rebalance.protocols=classic,consumer\nThen, it is possible to configure the kafka-console-consumer.sh command line tool to use it as follow:\nbin/kafka-console-consumer.sh --topic <TOPIC> --from-beginning --bootstrap-server localhost:9092 --consumer-property group.protocol=consumer\nIt is also possible to configure the KafkaConsumer by setting the\ngroup.protocol\nproperty to\nconsumer\n.\nfinal Map<String, Object> configs = new HashMap<>();\nconfigs.put(ConsumerConfig.GROUP_PROTOCOL_CONFIG, \"consumer\");\nfinal ConsumerConfig consumerConfig = new ConsumerConfig(configs);\nHow to report issues?\nFeel free to file a bug in the\nApache Kafka\nproject for any discovered issue. We appreciate your help to test it. Happy testing!",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/The+Next+Generation+of+the+Consumer+Rebalance+Protocol+%28KIP-848%29+-+Preview+Release+Notes",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

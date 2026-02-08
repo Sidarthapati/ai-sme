@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Future+release+plan",
+  "title": "Future release plan - Apache Kafka - Apache Software Foundation",
+  "content": "Starting with Apache Kafka 0.10.1.0, the Apache Kafka community moved to time-based release plan as described in the following Wiki page:\nTime Based Releases in Apache Kafka\nTime-based releases\nOct 2016 - 0.10.1.0\n0.10.1.1 (Dec 2016)\n0.10.1.2\nFeb 2017 - 0.10.2.0\n0.10.2.1 (April 2017)\n0.10.2.2\n(July 2018)\nJun 2017 - 0.11.0.0\n0.11.0.3\n(July 2018)\nOct 2017 - 1.0.0\n1.0.1\n1.0.2\n(July 2018)\nFeb 2018 - 1.1.0\n1.1.1\n(July 2018)\nJun 2018 - 2.0.0\n2.0.1\n(Oct 2018)\nNov 2018 - 2.1.0\n2.1.1\n(Jan 2019)\nMar 2019 - 2.2.0\n2.2.1\n(\nMay 2019)\n2.2.2\n(Oct 2019)\nJune 2019 - 2.3.0\n2.3.1\n(Sep 2019)\nDec 2019 - 2.4.0\n2.4.1\n(March 2020)\nMar 2020 - 2.5.0\n2.5.1\n(Aug 2020)\nJune 2020 - 2.6.0\n2.6.1\n(Jan 2021)\n2.6.2\n(Apr 2021)\n2.6.3\n(Nov 2021)\n2.7.0\n(Nov  2020)\n2.7.1\n(May 2021)\n2.7.2\n(Nov 2021)\n2.8.0\n(Apr 2021)\n2.8.1\n(Sep 2021)\n3.0.0\n(Sep 2021)\n3.0.1\n(March 2022)\n3.1.0\n(Jan 2022)\n3.1.1\n(April 2022)\n3.2.0\n(May 2022)\n3.2.1\n(July 2022)\n3.3.0\n(Sep 2022)\n3.3.1 (Oct 2022) - Release page was never created as it was done soon after 3.3.0.\n3.3.2\n(Jan 2023)\n3.4.0\n(Feb 2023)\n3.4.1\n(May 2023)\n3.5.0\n(Jun 2023)\n3.5.1\n(July 2023)\n3.5.2\n(Nov. 2023)\n3.6.0\n(Sep 2023)\n3.6.1\n(Dec 2023)\n3.6.2\n(Mar 2024)\n3.7.0\n(Jan 2024)\n3.7.1\n(May 2024)\n3.7.2\n(Nov 2024)\n3.8.0\n(July 2024)\n3.8.1\n(October 2024)\n3.9.0\n(September 2024)\n3.9.1\n(April 2025)\n3.9.2\n(January 2026)\n4.0.0\n(March 2025)\n4.0.1\n(July 2025)\n4.1.0\n(July 2025)\n4.1.1\n(October 2025)\n4.2.0\n(January 2026)\nOlder releases\nKafka 0.9.0.0 (Nov. 2015)\nNew consumer client\nfor better performance, api, and portability.\nSecurity\nQuotas\nKafka 0.10.0.0 (Q2 2016)\nRelease Plan 0.10.0",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Future+release+plan",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

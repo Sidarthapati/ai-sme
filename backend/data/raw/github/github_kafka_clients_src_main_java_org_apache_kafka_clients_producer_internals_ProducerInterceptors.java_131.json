@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_producer_internals_ProducerInterceptors.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerInterceptors.java",
+  "content": "                                    RecordBatch.NO_TIMESTAMP, -1, -1), exception, headers);\n                }\n            } catch (Exception e) {\n                // do not propagate interceptor exceptions, just log\n                log.warn(\"Error executing interceptor onAcknowledgement callback\", e);\n            }\n        }\n    }\n\n    public static <K, V> TopicPartition extractTopicPartition(ProducerRecord<K, V> record) {\n        return new TopicPartition(record.topic(), record.partition() == null ? RecordMetadata.UNKNOWN_PARTITION : record.partition());\n    }\n\n    /**\n     * Closes every interceptor in a container.\n     */\n    @Override\n    public void close() {\n        for (Plugin<ProducerInterceptor<K, V>> interceptorPlugin : this.interceptorPlugins) {\n            try {\n                interceptorPlugin.close();\n            } catch (Exception e) {\n                log.error(\"Failed to close producer interceptor \", e);\n            }\n        }\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerInterceptors.java#L131-L158",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerInterceptors.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 158,
+  "last_modified": "2026-02-06T01:16:27.609763",
+  "source_type": "github"
+}

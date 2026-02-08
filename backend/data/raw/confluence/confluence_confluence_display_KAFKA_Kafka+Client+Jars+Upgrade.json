@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Kafka+Client+Jars+Upgrade",
+  "title": "Kafka Client Jars Upgrade - Apache Kafka - Apache Software Foundation",
+  "content": "whilst it's ideal to upgrade your brokers and clients together as part of standard maintenance, it may be desirable to upgrade clients only.\nThe bi-directional compatibility improvements were made through the following KIPs:\nKIP-35 - Retrieving protocol version\nKIP-97: Improved Kafka Client RPC Compatibility Policy\nIf version <0.10.1.x is in use, you have to upgrade it to at least 0.10.1 (using existing upgrade/rolling upgrade guideline).\nhttps://www.confluent.io/blog/upgrading-apache-kafka-clients-just-got-easier\nTo refer to official upgrade docs -\nhttps://kafka.apache.org/documentation/#ecosystem",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Client+Jars+Upgrade",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

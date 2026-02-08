@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_producer_ProducerConfig.java_651",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/producer/ProducerConfig.java",
+  "content": "    }\n\n    private static String parseAcks(String acksString) {\n        try {\n            return acksString.trim().equalsIgnoreCase(\"all\") ? \"-1\" : Short.parseShort(acksString.trim()) + \"\";\n        } catch (NumberFormatException e) {\n            throw new ConfigException(\"Invalid configuration value for 'acks': \" + acksString);\n        }\n    }\n\n    static Map<String, Object> appendSerializerToConfig(Map<String, Object> configs,\n            Serializer<?> keySerializer,\n            Serializer<?> valueSerializer) {\n        // validate serializer configuration, if the passed serializer instance is null, the user must explicitly set a valid serializer configuration value\n        Map<String, Object> newConfigs = new HashMap<>(configs);\n        if (keySerializer != null)\n            newConfigs.put(KEY_SERIALIZER_CLASS_CONFIG, keySerializer.getClass());\n        else if (newConfigs.get(KEY_SERIALIZER_CLASS_CONFIG) == null)\n            throw new ConfigException(KEY_SERIALIZER_CLASS_CONFIG, null, \"must be non-null.\");\n        if (valueSerializer != null)\n            newConfigs.put(VALUE_SERIALIZER_CLASS_CONFIG, valueSerializer.getClass());\n        else if (newConfigs.get(VALUE_SERIALIZER_CLASS_CONFIG) == null)\n            throw new ConfigException(VALUE_SERIALIZER_CLASS_CONFIG, null, \"must be non-null.\");\n        return newConfigs;\n    }\n\n    public ProducerConfig(Properties props) {\n        super(CONFIG, props);\n    }\n\n    public ProducerConfig(Map<String, Object> props) {\n        super(CONFIG, props);\n    }\n\n    public static Set<String> configNames() {\n        return CONFIG.names();\n    }\n\n    public static ConfigDef configDef() {\n        return new ConfigDef(CONFIG);\n    }\n\n    public static void main(String[] args) {\n        System.out.println(CONFIG.toHtml(4, config -> \"producerconfigs_\" + config));\n    }\n\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/producer/ProducerConfig.java#L651-L698",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/producer/ProducerConfig.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 651,
+  "end_line": 698,
+  "last_modified": "2026-02-06T01:16:27.608681",
+  "source_type": "github"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_producer_internals_TxnPartitionEntry.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/TxnPartitionEntry.java",
+  "content": "        }\n        return lastAckedSequence;\n    }\n\n    void removeInFlightBatch(ProducerBatch batch) {\n        inflightBatchesBySequence.remove(batch);\n    }\n\n    void adjustSequencesDueToFailedBatch(long baseSequence, int recordCount) {\n        decrementSequence(recordCount);\n        resetSequenceNumbers(inFlightBatch -> {\n            if (inFlightBatch.baseSequence() < baseSequence)\n                return;\n\n            int newSequence = inFlightBatch.baseSequence() - recordCount;\n            if (newSequence < 0)\n                throw new IllegalStateException(\"Sequence number for batch with sequence \" + inFlightBatch.baseSequence()\n                        + \" for partition \" + topicPartition + \" is going to become negative: \" + newSequence);\n\n            inFlightBatch.resetProducerState(new ProducerIdAndEpoch(inFlightBatch.producerId(), inFlightBatch.producerEpoch()), newSequence);\n        });\n    }\n\n    private void resetSequenceNumbers(Consumer<ProducerBatch> resetSequence) {\n        TreeSet<ProducerBatch> newInflights = new TreeSet<>(PRODUCER_BATCH_COMPARATOR);\n        for (ProducerBatch inflightBatch : inflightBatchesBySequence) {\n            resetSequence.accept(inflightBatch);\n            newInflights.add(inflightBatch);\n        }\n        inflightBatchesBySequence = newInflights;\n    }\n\n    private boolean decrementSequence(int decrement) {\n        int updatedSequence = nextSequence;\n        updatedSequence -= decrement;\n        if (updatedSequence < 0) {\n            throw new IllegalStateException(\n                    \"Sequence number for partition \" + topicPartition + \" is going to become negative: \"\n                            + updatedSequence);\n        }\n        this.nextSequence = updatedSequence;\n        return true;\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/producer/internals/TxnPartitionEntry.java#L131-L175",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/producer/internals/TxnPartitionEntry.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 175,
+  "last_modified": "2026-02-06T01:16:27.610643",
+  "source_type": "github"
+}

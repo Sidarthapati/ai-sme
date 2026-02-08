@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_New+Committer+Workflow",
+  "title": "New Committer Workflow - Apache Kafka - Apache Software Foundation",
+  "content": "See\nhttps://community.apache.org/pmc/adding-committers.html\nfor the official reference.\nAfter you have accepted your invitation to become an Apache Kafka committer, there are a few housekeeping items required.\nSign and submit your ICLA to the ASF secretary\nRead instructions here\nhttps://www.apache.org/licenses/contributor-agreements.html#clas\nDownload, print, and sign the ICLA\nScan and email signed ICLA to\nsecretary@apache.org\nWait for your Apache ID\nReset your password as indicated\nJoin the ASF organization with your GitHub account\nConfirm that you have access\nAdd yourself to the committers on kafka-site\nRead the committer-tools README",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/New+Committer+Workflow",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

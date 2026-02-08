@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_ClientResponse.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/ClientResponse.java",
+  "content": "\n    public RequestHeader requestHeader() {\n        return requestHeader;\n    }\n\n    public String destination() {\n        return destination;\n    }\n\n    public AbstractResponse responseBody() {\n        return responseBody;\n    }\n\n    public boolean hasResponse() {\n        return responseBody != null;\n    }\n\n    public long requestLatencyMs() {\n        return latencyMs;\n    }\n\n    public void onComplete() {\n        if (callback != null)\n            callback.onComplete(this);\n    }\n\n    @Override\n    public String toString() {\n        return \"ClientResponse(receivedTimeMs=\" + receivedTimeMs +\n               \", latencyMs=\" +\n               latencyMs +\n               \", disconnected=\" +\n               disconnected +\n               \", timedOut=\" +\n               timedOut +\n               \", requestHeader=\" +\n               requestHeader +\n               \", responseBody=\" +\n               responseBody +\n               \")\";\n    }\n\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/ClientResponse.java#L131-L174",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/ClientResponse.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 174,
+  "last_modified": "2026-02-06T01:16:27.577285",
+  "source_type": "github"
+}

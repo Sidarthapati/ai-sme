@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Index",
+  "title": "Index - Apache Kafka - Apache Software Foundation",
+  "content": "Project Page\nKafka Website\nKafka Mailing Lists\nGeneral information:\nKafka Connector Hub\nKafka Clients support\nKafka papers and presentations\nKafka applications and usage\nJMX reporters\nKafka ecosystem\nSystem Tools\nDesign proposals (KIPs)\nKafka Performance Testing\n0.7 Release\nKafka compression\nWire protocol\nKafka internals\nOperation\nMirrorMaker tool\n0.8 Release\n0.8 changes and Quick start\nProducer examples\nHigh level consumer examples\nSimpleConsumer Examples\nPerformance\nReplication design\nReplication presentation at ApacheCon 2013\nWire protocol\nZookeeper data structures\nMigrating from 0.7 to 0.8\nReplication tools\nKafkaController internals\n0.8.1 Release\nDynamic topic-level configuration\nLog compaction\n0.9 Release\nConsumer client redesign\n0.10 Release\nKafka Streams\nFuture stuff:\nFuture release plan\nIdempotent Producer\nQuota design\nHierarchical topics\nOffset management\nRestful Api\nAudit trail proposal\nSystem test improvements\nIncremental Cooperative Rebalancing: Support and Policies\nDynamically Adjust Log Levels in Connect\nChanging Defaults in Connect 3.0.0\nDevelopers:\nDeveloper setup\nStart Apache Kafka In Debug Mode (Eclipse Scala)\nContributing Code Changes\nGit workflow\nComponent maintainer\nTutorial - run Kafka system tests with ducktape\nKafka Improvement Proposal\ns - Necessary when contributing changes to public APIs\nKafka Client Jars Upgrade\nSecurity\nSemi-Automated Bash Script to generate TLS Certs and Keys\nCommitters/PMC Members:\nRelease Process\nOnboarding",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Index",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

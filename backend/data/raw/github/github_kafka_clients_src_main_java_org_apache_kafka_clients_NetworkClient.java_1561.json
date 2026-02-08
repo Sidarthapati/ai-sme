@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_NetworkClient.java_1561",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/NetworkClient.java",
+  "content": "        public long timeElapsedSinceSendMs(long currentTimeMs) {\n            return Math.max(0, currentTimeMs - sendTimeMs);\n        }\n\n        public long throttleTimeMs() {\n            return throttleTimeMs;\n        }\n\n        public long timeElapsedSinceCreateMs(long currentTimeMs) {\n            return Math.max(0, currentTimeMs - createdTimeMs);\n        }\n\n        public ClientResponse completed(AbstractResponse response, long timeMs) {\n            return new ClientResponse(header, callback, destination, createdTimeMs, timeMs,\n                    false, null, null, response);\n        }\n\n        public ClientResponse timedOut(long timeMs) {\n            // A timed out request is considered disconnected as well\n            return new ClientResponse(header, callback, destination, createdTimeMs, timeMs,\n                    true, true, null, null, null);\n        }\n\n        public ClientResponse disconnected(long timeMs) {\n            return new ClientResponse(header, callback, destination, createdTimeMs, timeMs,\n                    true, null, null, null);\n        }\n\n        @Override\n        public String toString() {\n            return \"InFlightRequest(header=\" + header +\n                    \", destination=\" + destination +\n                    \", expectResponse=\" + expectResponse +\n                    \", createdTimeMs=\" + createdTimeMs +\n                    \", sendTimeMs=\" + sendTimeMs +\n                    \", isInternalRequest=\" + isInternalRequest +\n                    \", request=\" + request +\n                    \", callback=\" + callback +\n                    \", send=\" + send + \")\";\n        }\n\n        public void incrementThrottleTime(long throttleTimeMs) {\n            this.throttleTimeMs = throttleTimeMs + this.throttleTimeMs;\n        }\n    }\n\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/NetworkClient.java#L1561-L1608",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/NetworkClient.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 1561,
+  "end_line": 1608,
+  "last_modified": "2026-02-06T01:16:27.578839",
+  "source_type": "github"
+}

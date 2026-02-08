@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_PMC+member+onboarding+guide",
+  "title": "PMC member onboarding guide - Apache Kafka - Apache Software Foundation",
+  "content": "This document serves as an onboarding guide to new PMC members. Please email to\nprivate@kafka.apache.org\nfor any proposed changes to this document.\nWelcome to the Project Management Committee (PMC) for Apache Kafka!\nUnderstanding your role and responsibilities in Apache Software Foundation (ASF) and Apache Kafka\nBefore proceeding ahead with this document, please make yourself familiar with the following documents:\nHow ASF works and where does PMC fit into the picture\nASF PMC guide\nApart from the ASF guidelines, Apache Kafka defines specific roles, responsibility and processes for PMC members. These are documented at Apache Kafka\nBylaws\n. Please familiarize yourself with them.\nAdditional responsibilities\nThis section provides guidance of some responsibilities of PMC member which are specific to Apache Kafka\nApproving self service requests for Jira\nASF Infra provides guidance on what considerations to make when approving a request for a Jira account. You can find the instructions\nhere\n.\nAdditionally, please provide the requester with the \"contributors\" role in Apache Kafka project in JIRA. The following steps will guide you with the steps.\nGo to Apache Kafka project in Jira at\nhttps://issues.apache.org/jira/browse/KAFKA\nNavigate to Project settings in the bottom left corner of the page.\nSelect \"Users and Roles\"\nClick on \"Add users to the role\"\nSelect contributors from the dropdown.",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/PMC+member+onboarding+guide",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

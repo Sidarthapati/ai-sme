@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_KAFKA-656+-+Quota+Design",
+  "title": "KAFKA-656 - Quota Design - Apache Kafka - Apache Software Foundation",
+  "content": "Quota Implementation KAFKA-656\nRequirements:\nThere are several quantities we would want to track:\n1. Requests pers second\n2. Bytes written per second\n3. Bytes read per second\nThere are two reasonable groupings we would want to aggregate and enforce these thresholds at:\n1. Topic level\n2. Client level (e.g. by client id from the request)\nWhen a request hits one of these limits we will simply reject it with a QUOTA_EXCEEDED exception.\nhttps://issues.apache.org/jira/browse/KAFKA-656\nConceptual Design:\nThis is psuedo-code obviously, and incomplete, just starting to put some ideas down.\nclass RequestQuotaclass RequestQuota\n{\npublic bool checkRequestQuotas(String ClientIP, String Topic, Long BytesToRead, Long BytesToWrite)\n{\nlong topicRPSLImit = QuotaConfiguration.getTopicRPSLimit(Topic);\nif (! Quota.checkRPS(Topic, topicRPSLImit))\n{\nreturn false;\n}\nlong clientRPSLImit = QuotaConfiguration.getclientRPSLimit(ClientIP);\nif (! Quota.checkRPS(ClientIP, clientRPSLImit))\n{\nreturn false;\n}\n}\n}\nclass Quota\n{\npublic bool checkRPS(String targetEntity, long Limit)\n{\nMeter rps = Metrics.newMeter(this.class, 'rps-' + targetEntity, 'requests', TimeUnit.SECONDS);\nrps.mark();\nif (Limit > 0 && rps.getOneMinuteRate() >= Limit)\n{\nreturn false;\n}\nreturn true;\n}\n}",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/KAFKA-656+-+Quota+Design",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

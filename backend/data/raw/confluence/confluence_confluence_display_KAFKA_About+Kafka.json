@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_About+Kafka",
+  "title": "About Kafka - Apache Kafka - Apache Software Foundation",
+  "content": "About Kafka\nKafka is a distributed publish-subscribe messaging system.\nIt is designed to support the following:\nPersistent messaging with O(1) disk structures that provide constant time performance even with many TB of stored messages.\nHigh-throughput: even with very modest hardware Kafka can support hundreds of thousands of messages per second.\nExplicit support for partitioning messages over Kafka servers and distributing consumption over a cluster of consumer machines while maintaining per-partition ordering semantics.\nSupport for parallel data load into Hadoop.\nKafka provides a publish-subscribe solution that can handle all activity stream data and processing on a consumer-scale web site. This kind of activity (page views, searches, and other user actions) are a key ingredient in many of the social feature on the modern web. This data is typically handled by \"logging\" and ad hoc log aggregation solutions due to the throughput requirements. This kind of ad hoc solution is a viable solution to providing logging data to an offline analysis system like Hadoop, but is very limiting for building real-time processing. Kafka aims to unify offline and online processing by providing a mechanism for parallel load into Hadoop as well as the ability to partition real-time consumption over a cluster of machines.\nThe use for activity stream processing makes Kafka comparable to Facebook's Scribe or Cloudera's Flume, though the architecture and primitives are very different for these systems and make Kafka more comparable to a traditional messaging system.",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/About+Kafka",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_admin_StreamsGroupMemberAssignment.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/admin/StreamsGroupMemberAssignment.java",
+  "content": "            }\n            final TaskIds taskIds = (TaskIds) o;\n            return Objects.equals(subtopologyId, taskIds.subtopologyId)\n                && Objects.equals(partitions, taskIds.partitions);\n        }\n\n        @Override\n        public int hashCode() {\n            return Objects.hash(\n                subtopologyId,\n                partitions\n            );\n        }\n\n        @Override\n        public String toString() {\n            return partitions.stream().map(x -> subtopologyId + \"_\" + x).collect(Collectors.joining(\",\"));\n        }\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/admin/StreamsGroupMemberAssignment.java#L131-L151",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/admin/StreamsGroupMemberAssignment.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 151,
+  "last_modified": "2026-02-06T01:16:27.588130",
+  "source_type": "github"
+}

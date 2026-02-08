@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Kafka+Exactly+Once+Semantics",
+  "title": "Kafka Exactly Once Semantics - Apache Kafka - Apache Software Foundation",
+  "content": "This is a space from which to link to pages related to Kafka's exactly once semantics.\nKIPs / Design docs\nKIP-98 - Exactly Once Delivery and Transactional Messaging\nExactly once detailed design doc\nExactly once perf numbers\nKIP-185: Make exactly once in order delivery per partition the default producer setting\nKIP-129: Streams Exactly-Once Semantics\nImplementation notes\nKafka Exactly Once - Solving the problem of spurious OutOfOrderSequence errors\nKafka Exactly Once - Dealing with older message formats when idempotence is enabled",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Exactly+Once+Semantics",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

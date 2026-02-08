@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_producer_BufferExhaustedException.java_1",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/producer/BufferExhaustedException.java",
+  "content": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements. See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License. You may obtain a copy of the License at\n *\n *    http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage org.apache.kafka.clients.producer;\n\nimport org.apache.kafka.common.errors.TimeoutException;\n\n/**\n * This exception is thrown if the producer cannot allocate memory for a record within max.block.ms due to the buffer\n * being too full.\n *\n * In earlier versions a TimeoutException was thrown instead of this. To keep existing catch-clauses working\n * this class extends TimeoutException.\n *\n */\npublic class BufferExhaustedException extends TimeoutException {\n\n    private static final long serialVersionUID = 1L;\n\n    public BufferExhaustedException(String message) {\n        super(message);\n    }\n\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/producer/BufferExhaustedException.java#L1-L38",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/producer/BufferExhaustedException.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 1,
+  "end_line": 38,
+  "last_modified": "2026-02-06T01:16:27.608003",
+  "source_type": "github"
+}

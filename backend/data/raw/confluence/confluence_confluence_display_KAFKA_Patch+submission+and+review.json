@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Patch+submission+and+review",
+  "title": "Patch submission and review - Apache Kafka - Apache Software Foundation",
+  "content": "This page is meant to document the various steps to working with git to contribute or review Kafka code. There are probably a lot of bugs in these steps or possible better recipes, so help make this page better. If you want to push your commits without passwd, please see\napache git wiki\n.\nOverview\nThe Kafka project development ecosystem involves git (for version control), JIRA (for issue tracking) and either GitHub pull requests or Review Board (for reviewing code changes made by contributors). See below for more details.\nPatch Review Tool\nWe have moved the contribution workflow to Github pull requests. The patch review tool has been phased out. If you are submitting a new patch, please use a Github pull request. If you are still interested in learning more about it,\nyou can find the instructions here\n.\nContributor and Reviewer Workflow\nThe process for contributing or reviewing a patch is documented in the\nContributing Code Changes\npage.\nCommitter Workflow\nIf you are merging a patch attached to a JIRA (and not a GitHub PR),\nhere is a suggested workflow\n.\nInstructions on merging GitHub pull requests\nare here\n.\nHow to get your patches reviewed\nPlease ping the dev mailing list if you have a patch that needs a review and it will be added to the queue.\nThe following (JIRA link) are issues that currently have patches available and have an assigned reviewer:\nGetting issues...",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Patch+submission+and+review",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

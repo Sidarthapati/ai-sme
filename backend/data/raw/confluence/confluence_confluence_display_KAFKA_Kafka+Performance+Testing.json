@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Kafka+Performance+Testing",
+  "title": "Kafka Performance Testing - Apache Kafka - Apache Software Foundation",
+  "content": "This page is meant to be the home for the reports of all performance testing done on Apache Kafka. If you have run performance benchamarks you would like to share, please include the link here.\nAn analysis of the impact of max.in.flight.requests.per.connection and acks on Producer performance",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Performance+Testing",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Handling+Produce+and+Fetch+Requests+in+KafkaApi",
+  "title": "Handling Produce and Fetch Requests in KafkaApi - Apache Kafka - Apache Software Foundation",
+  "content": "KafkaApis.handleFetchRequest():\n1 parse the fetch request and make sure it is valid\n2 if fetch request is from a follower (replicaId = -1), call maybeUpdatePartitionHW to see if the HW of the leader of a partition can be updated.\n3 check to see if the fetch request can be satisfied immediately.\n3.1 If yes, call readMessageSets() immediately and send the response back.\n3.2 Otherwise, register a DelayedFetch watcher on each of the partition in the fetch request. The watcher will be checked and be potentially satisfied (DelayedFetch.checkSatisfied) if (a) the amount of available bytes for fetch exceeds a certain amount, or (b) a timeout has been reached.\n3.2.1 Condition (a) will be checked at the end of handleProducerRequest(). For each satisfied fetch request, it calls readMessageSets() to fetch the data and to send the response.\n3.2.2 When condition (b) is met, DelayedFetch.expire() will be called. It calls readMessageSets() to fetch whatever data is available and to send the response.\n(TODO: need logic to unblock produce requests waiting on ack from followers)\nKafkaApis.handleProducerRequest():\n1 produce(): for each partition\n1.1 make sure leader is on this broker\n1.2 add new data to local log (leader replica)\n1.3 send response immediately (TODO: need logic to send response asynchronously when data is received by followers)\n2 check if the produce request can satisfy an fetch request (meeting the minimum byte requirement)\n3 for all satisfied produce requests, fetch data and send response",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Handling+Produce+and+Fetch+Requests+in+KafkaApi",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

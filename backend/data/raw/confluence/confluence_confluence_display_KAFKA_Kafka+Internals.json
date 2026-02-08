@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Kafka+Internals",
+  "title": "Kafka Internals - Apache Kafka - Apache Software Foundation",
+  "content": "This page is meant to give a high-level introduction to the Kafka code base and the major subsystems. It is meant to help you learn the code base.\nHere is an overview of a few of the subsystems:\nKafka API layer\nLogManager and Log\nReplicaManager\nZookeeperConsumerConnector\nHere is a basic diagram of how these systems fit together:",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Kafka+Internals",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

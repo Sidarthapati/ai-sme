@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_admin_ExpireDelegationTokenOptions.java_1",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/admin/ExpireDelegationTokenOptions.java",
+  "content": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements. See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License. You may obtain a copy of the License at\n *\n *    http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage org.apache.kafka.clients.admin;\n\n/**\n * Options for {@link Admin#expireDelegationToken(byte[], ExpireDelegationTokenOptions)}.\n */\npublic class ExpireDelegationTokenOptions extends AbstractOptions<ExpireDelegationTokenOptions> {\n    private long expiryTimePeriodMs = -1L;\n\n    /**\n     * @param expiryTimePeriodMs the time period until we should expire this token.\n     * {@code expiryTimePeriodMs} &gt;= 0: the token will update the expiration timestamp to min(now + expiryTimePeriodMs, maxTimestamp)\n     * {@code expiryTimePeriodMs} &lt; 0: token will be expired immediately.\n     */\n    public ExpireDelegationTokenOptions expiryTimePeriodMs(\n        long expiryTimePeriodMs\n    ) {\n        this.expiryTimePeriodMs = expiryTimePeriodMs;\n        return this;\n    }\n\n    public long expiryTimePeriodMs() {\n        return expiryTimePeriodMs;\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/admin/ExpireDelegationTokenOptions.java#L1-L42",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/admin/ExpireDelegationTokenOptions.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 1,
+  "end_line": 42,
+  "last_modified": "2026-02-06T01:16:27.584204",
+  "source_type": "github"
+}

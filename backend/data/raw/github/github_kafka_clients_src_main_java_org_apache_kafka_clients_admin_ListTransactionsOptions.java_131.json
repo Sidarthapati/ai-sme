@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_admin_ListTransactionsOptions.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/admin/ListTransactionsOptions.java",
+  "content": "            \", filteredDuration=\" + filteredDuration +\n            \", filteredTransactionalIdPattern=\" + filteredTransactionalIdPattern +\n            \", timeoutMs=\" + timeoutMs +\n            ')';\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (o == null || getClass() != o.getClass()) return false;\n        ListTransactionsOptions that = (ListTransactionsOptions) o;\n        return Objects.equals(filteredStates, that.filteredStates) &&\n            Objects.equals(filteredProducerIds, that.filteredProducerIds) &&\n            Objects.equals(filteredDuration, that.filteredDuration) &&\n            Objects.equals(filteredTransactionalIdPattern, that.filteredTransactionalIdPattern);\n    }\n\n    @Override\n    public int hashCode() {\n        return Objects.hash(filteredStates, filteredProducerIds, filteredDuration, filteredTransactionalIdPattern);\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/admin/ListTransactionsOptions.java#L131-L153",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/admin/ListTransactionsOptions.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 153,
+  "last_modified": "2026-02-06T01:16:27.586368",
+  "source_type": "github"
+}

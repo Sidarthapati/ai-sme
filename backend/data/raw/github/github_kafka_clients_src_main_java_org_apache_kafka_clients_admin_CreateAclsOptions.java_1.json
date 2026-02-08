@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_admin_CreateAclsOptions.java_1",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/admin/CreateAclsOptions.java",
+  "content": "/*\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements. See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License. You may obtain a copy of the License at\n *\n *    http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage org.apache.kafka.clients.admin;\n\nimport java.util.Collection;\n\n/**\n * Options for {@link Admin#createAcls(Collection)}.\n */\npublic class CreateAclsOptions extends AbstractOptions<CreateAclsOptions> {\n\n    /**\n     * Set the timeout in milliseconds for this operation or {@code null} if the default api timeout for the\n     * AdminClient should be used.\n     *\n     */\n    // This method is retained to keep binary compatibility with 0.11\n    public CreateAclsOptions timeoutMs(Integer timeoutMs) {\n        this.timeoutMs = timeoutMs;\n        return this;\n    }\n\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/admin/CreateAclsOptions.java#L1-L39",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/admin/CreateAclsOptions.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 1,
+  "end_line": 39,
+  "last_modified": "2026-02-06T01:16:27.581080",
+  "source_type": "github"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Restful+API+Proposal",
+  "title": "Restful API Proposal - Apache Kafka - Apache Software Foundation",
+  "content": "I am working on a proposal to satisfy the Restful Proxy project listed on the Projects page. (\nhttp://incubator.apache.org/kafka/projects.html\n)\nMy working knowledge of Kafka is about 3 hours old and I have actually written zero code yet, it is my job to do so for Box so I will update this as my knowledge increases. There may be some fundamental issues with this proposal at this time.\nGeneral Idea\nCreate a Restful API which will allow producers and consumers to communicate with a Kafka server via HTTP calls\nConsumers\nURL Format:\nGET /messages/<topic>/<consumer>/<offset> - Retrieve the messages for a consumer, from the topic, starting with an offset\nDELETE /messages/<topic>/<consumer>/<offset> - ACK consumption of message for a consumer, topic, offset\nProducers\nPUT /messages/<topic>\nRequest Body will become the message\nKnown Missing Items:\nI know that this does not take into account partitions.\nIt would be nice to be able to implement the async producer and have an HTTP callback happen from within the RESTServer (producer specifies a URL to be requested as callback)\nIf an HTTP call back wasn't available, have the service return a task ID (MD5 of the message or something), and then allow the client to query the server to see if the callback from Kafka has happened yet.",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Restful+API+Proposal",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Maintainers",
+  "title": "Maintainers - Apache Kafka - Apache Software Foundation",
+  "content": "What is a maintainer?\nAll the committers own the Kafka code base and should be committed to making it all as good as possible. But we want to ensure that major areas have at least one person (and preferably two) who act as the defacto owners for each logical subsystem. The responsibilities of a maintainer are the following:\nReview code contributions that effect your area as promptly as possible\nProvide the final word on API design for this system\nAct as the point-of-contact for questions from users and other committers that relate to this system\nHave a hygene-related roadmap of items to help make this area of the code base shiny and beautiful. This includes the following:\nCode quality: prettiness, readability, etc\nDocumentation\nTest coverage and test quality\nHelp triage bugs related to your area of expertise\nSubsystem Maintainers\nSystem\nPackages\nMaintainers\nNotes\nProducer (java, scala)\nkafka.producer, kafka.javaapis\nJun, Neha, Jonathan, Joestein\nConsumer (java, scala)\nkafka.consumer, kafka.javaapis\nNeha, Joel, Jonathan\nNetwork Layer\nkafka.network\njay, Neha, Joel\nLog\nkafka.message, kafka.log\njay, Jun, Prashanth\nReplication\nkafka.controller,kafka.server\nNeha, Jun, Prashanth\nCommand Line Tools\nJoestein, Jonathan\nSystem Tests\n/system_tests\nJoestein\nAPI layer\nkafka.server.KafkaApis, kafka.api\nJun, Joel, Joestein\nThis includes the protocol definition for each of the APIs as well as the request logic in KafkaApis.",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Maintainers",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

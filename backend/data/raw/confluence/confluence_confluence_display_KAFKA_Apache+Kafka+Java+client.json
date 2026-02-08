@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_Apache+Kafka+Java+client",
+  "title": "Apache Kafka Java client - Apache Kafka - Apache Software Foundation",
+  "content": "Consumer threading refactor\nConsumer rebalance\nConsumer threading refactor design\nConsumer threading refactor release plan\nConsumer threading refactor test plan\nJava client Consumer request flow\nJava client Consumer timeouts",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/Apache+Kafka+Java+client",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

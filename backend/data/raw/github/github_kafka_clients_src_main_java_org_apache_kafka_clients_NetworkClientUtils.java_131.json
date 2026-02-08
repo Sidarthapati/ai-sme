@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_NetworkClientUtils.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/NetworkClientUtils.java",
+  "content": "     * Check if the code is disconnected and unavailable for immediate reconnection (i.e. if it is in\n     * reconnect backoff window following the disconnect).\n     */\n    public static boolean isUnavailable(KafkaClient client, Node node, Time time) {\n        return client.connectionFailed(node) && client.connectionDelay(node, time.milliseconds()) > 0;\n    }\n\n    /**\n     * Check for an authentication error on a given node and raise the exception if there is one.\n     */\n    public static void maybeThrowAuthFailure(KafkaClient client, Node node) {\n        AuthenticationException exception = client.authenticationException(node);\n        if (exception != null)\n            throw exception;\n    }\n\n    /**\n     * Initiate a connection if currently possible. This is only really useful for resetting the\n     * failed status of a socket.\n     */\n    public static void tryConnect(KafkaClient client, Node node, Time time) {\n        client.ready(node, time.milliseconds());\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/NetworkClientUtils.java#L131-L155",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/NetworkClientUtils.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 155,
+  "last_modified": "2026-02-06T01:16:27.578920",
+  "source_type": "github"
+}

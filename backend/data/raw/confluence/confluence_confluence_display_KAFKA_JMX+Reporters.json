@@ -1,0 +1,10 @@
+{
+  "id": "confluence_display_KAFKA_JMX+Reporters",
+  "title": "JMX Reporters - Apache Kafka - Apache Software Foundation",
+  "content": "Here is a list of external metrics reporters (in addition to the KafkaCSVMetricsReporter built-in):\nName\nDescription\nKafka Version supported\nLink\nkafka-ganglia\nGanglia Metrics Reporter using metrics-ganglia-2.2.0\n>= 0.8.0-beta1\nhttps://github.com/criteo/kafka-ganglia\njmxtrans\nExternal generic tool to poll and export JMX metrics\nall (the JMX query will vary)\nhttps://github.com/jmxtrans/jmxtrans\n- Example query generation with puppet for kafka 0.7.2\nhttps://github.com/wikimedia/puppet-jmxtrans#kafka-broker-with-jmxtrans-ganglia-output\nMetricsReporter\nfor Graphite\n>= 0.8.0-beta1\nhttps://github.com/damienclaveau/kafka-graphite\nstatsd-kafka\nstatsd reporter\nhttps://github.com/myfitnesspal/kafka-statsd-reporter\nor\nhttps://github.com/airbnb/kafka-statsd-metrics2\nmetrics producer\nMetrics reporter as a Kafka producer\nreports metrics to kafka topics\n0.8.1\nhttps://github.com/stealthly/metrics-kafka\njmxterm\nA useful CLI-based jmx client\n0.8.2\njmxterm quickstart",
+  "url": "https://cwiki.apache.org/confluence/display/KAFKA/JMX+Reporters",
+  "space": "KAFKA",
+  "labels": [],
+  "last_modified": null,
+  "source_type": "confluence"
+}

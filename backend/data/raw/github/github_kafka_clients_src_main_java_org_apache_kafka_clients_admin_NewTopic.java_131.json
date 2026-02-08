@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_admin_NewTopic.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/admin/NewTopic.java",
+  "content": "            for (Entry<Integer, List<Integer>> entry : replicasAssignments.entrySet()) {\n                creatableTopic.assignments().add(\n                    new CreatableReplicaAssignment().\n                        setPartitionIndex(entry.getKey()).\n                        setBrokerIds(entry.getValue()));\n            }\n        }\n        if (configs != null) {\n            for (Entry<String, String> entry : configs.entrySet()) {\n                creatableTopic.configs().add(\n                    new CreatableTopicConfig().\n                        setName(entry.getKey()).\n                        setValue(entry.getValue()));\n            }\n        }\n        return creatableTopic;\n    }\n\n    @Override\n    public String toString() {\n        return \"(name=\" + name +\n                \", numPartitions=\" + numPartitions.map(String::valueOf).orElse(\"default\") +\n                \", replicationFactor=\" + replicationFactor.map(String::valueOf).orElse(\"default\") +\n                \", replicasAssignments=\" + replicasAssignments +\n                \", configs=\" + configs +\n                \")\";\n    }\n\n    @Override\n    public boolean equals(final Object o) {\n        if (this == o) return true;\n        if (o == null || getClass() != o.getClass()) return false;\n        final NewTopic that = (NewTopic) o;\n        return Objects.equals(name, that.name) &&\n            Objects.equals(numPartitions, that.numPartitions) &&\n            Objects.equals(replicationFactor, that.replicationFactor) &&\n            Objects.equals(replicasAssignments, that.replicasAssignments) &&\n            Objects.equals(configs, that.configs);\n    }\n\n    @Override\n    public int hashCode() {\n        return Objects.hash(name, numPartitions, replicationFactor, replicasAssignments, configs);\n    }\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/admin/NewTopic.java#L131-L176",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/admin/NewTopic.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 176,
+  "last_modified": "2026-02-06T01:16:27.586859",
+  "source_type": "github"
+}

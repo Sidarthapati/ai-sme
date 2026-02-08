@@ -1,0 +1,13 @@
+{
+  "id": "kafka_clients_src_main_java_org_apache_kafka_clients_producer_internals_ProducerMetadata.java_131",
+  "title": "kafka/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerMetadata.java",
+  "content": "    }\n\n    @Override\n    public synchronized void update(int requestVersion, MetadataResponse response, boolean isPartialUpdate, long nowMs) {\n        super.update(requestVersion, response, isPartialUpdate, nowMs);\n        errors = response.errors();\n\n        // Remove all topics in the response that are in the new topic set. Note that if an error was encountered for a\n        // new topic's metadata, then any work to resolve the error will include the topic in a full metadata update.\n        if (!newTopics.isEmpty()) {\n            for (MetadataResponse.TopicMetadata metadata : response.topicMetadata()) {\n                newTopics.remove(metadata.topic());\n            }\n        }\n\n        notifyAll();\n    }\n\n    public Errors getError(final String topic) {\n        if (errors != null) {\n            return errors.get(topic);\n        }\n        return null;\n    }\n\n    @Override\n    public synchronized void fatalError(KafkaException fatalException) {\n        super.fatalError(fatalException);\n        notifyAll();\n    }\n\n    /**\n     * Close this instance and notify any awaiting threads.\n     */\n    @Override\n    public synchronized void close() {\n        super.close();\n        notifyAll();\n    }\n\n}\n",
+  "url": "https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerMetadata.java#L131-L172",
+  "file_path": "clients/src/main/java/org/apache/kafka/clients/producer/internals/ProducerMetadata.java",
+  "repo_name": "kafka",
+  "language": "java",
+  "start_line": 131,
+  "end_line": 172,
+  "last_modified": "2026-02-06T01:16:27.609839",
+  "source_type": "github"
+}
