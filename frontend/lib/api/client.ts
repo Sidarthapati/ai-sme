@@ -5,6 +5,7 @@
 import axios from 'axios'
 import { useAuthStore } from '@/lib/store/auth'
 
+// API URL from environment variable (set in Railway)
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
 
 
