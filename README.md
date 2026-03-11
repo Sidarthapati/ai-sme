@@ -1,3 +1,5 @@
+# Currently Hosted at : https://ami-sme-frontend-production.up.railway.app/chat 
+
 # AI SME - Intelligent Documentation Assistant
 
 An AI-powered assistant trained on Confluence documentation and GitHub codebases to answer team questions and provide instant access to documentation and code references.
